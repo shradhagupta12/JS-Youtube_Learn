@@ -50,4 +50,42 @@ let myFunction = function(){
 // Is Javascript a static type or dynamic type language ?
 /*******************************************************************************/
 
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+// Stack (Primitive) , Heap (Non-Primitive)
+
+let myYoutubeName = "shraddhagupta";
+
+let anotherYoutubeName = myYoutubeName;
+
+anotherYoutubeName = "imShraddha";
+
+console.table([myYoutubeName , anotherYoutubeName]);
+
+/* 
+    So above example is of Stack memory as in stack memory the when we assign the one value to another 
+    Javascript gives the copy of the value instead of actual value.
+
+    So if the value of the another variable is updated in future it will not be changing the value of 
+    the actual variable.
+*/
+
+let userOne = {
+    email : "userone@google.com",
+    isLoggedIn : true
+}
+
+console.log(userOne);
+
+let userTwo = userOne
+
+userTwo.email = "shraddha@gmail.com"
+
+console.table([userOne , userTwo]);
+
+/*
+    So in the Heap memory case both the variable is pointing to the same memory location and in 
+    one variable value change will lead to actual value change in the memory.
+    
+    Which can lead to data inconsistent.
+*/
