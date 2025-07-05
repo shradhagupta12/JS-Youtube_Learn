@@ -26,7 +26,7 @@ const objFour = Object.assign({} , objOne , objTwo , objThree);
 // OK so the second method to do the same is using the spread opertor as we used in Array
 
 const objFive = {...objOne , ...objTwo , ...objThree};
-console.log(objFive);
+// console.log(objFive);
 
 
 //  Now we will see if the object comes from the databases. 
@@ -49,15 +49,48 @@ const user = [
 
 
 // Another way to access this object values from the array 
-console.log(user[1].email);
+// console.log(user[1].email);
 
 // Now if want only the keys of the object or value from the object.
 
-console.log(Object.keys(myObj));
-console.log(Object.values(myObj));
-console.log(Object.entries(myObj));
+// console.log(Object.keys(myObj));
+// console.log(Object.values(myObj));
+// console.log(Object.entries(myObj));
 
 
 // Sometime there are cases where maybe there some values are not present we can check that.
 
-console.log(myObj.hasOwnProperty("roll"));
+// console.log(myObj.hasOwnProperty("roll"));
+
+// Destruction
+
+// Basically destruction is used in object and array . Mostly used in object.
+
+// So lets say we have a object course. And we want to access the object element. 
+// We mostly use dot notation for accessing the object element.
+// But we can also use destruction for the same. Let see below example
+
+
+const course = {
+    courseName : "Javascript In Hindi",
+    coursePrice : 999,
+    courseFormat : "Online"
+}
+
+// Common access format
+
+// console.log(course.coursePrice);
+
+// Destruction method
+
+const {courseName} = course
+
+// console.log(courseName);
+
+// We can give a easy name to key in destuction to access the element
+
+const {courseFormat : format} = course;
+
+// console.log (format);
+
+
