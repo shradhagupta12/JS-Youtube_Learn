@@ -47,6 +47,7 @@ const user = {
 // const addTwo = (num1 , num2) => (num1 + num2)
 
 
+
 // Object return
 
 const addTwo = (num1 , num2) => ({userName : "Shraddha"});
