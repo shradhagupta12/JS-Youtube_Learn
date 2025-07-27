@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | One With Chai aur Code</title>
+</head>
+
+<style>
+    body{
+        background-color: #212121;
+        color: white;
+    }
+</style>
+
+<body>
+
+<script>
+    const div = document.createElement('div');
+    div.className = "main";
+    div.id = Math.round(Math.random() * 10 + 1);
+
+    div.setAttribute('title' , 'div-title')
+    div.style.backgroundColor = "green"
+    
+    div.style.padding = '15px';
+
+    div.innerText = "Code with Shraddha";
+
+    const addText = document.createTextNode(" Chai aur Code");
+
+    div.appendChild(addText);
+
+    console.log(div);
+
+    document.body.appendChild(div);
+
+</script>
+
+</body>
+</html>
