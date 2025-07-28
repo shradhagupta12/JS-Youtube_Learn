@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Chai aur Code | Shraddha</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+
+    <script>
+        /*
+        Lets make a logic to add a list item in ul using Javascript
+        For this we will firstly write a function in which we will 
+        create a element li
+        then will insert the text in the li
+        then will append the li to the ul
+
+        after all this we will call the function
+        */
+
+
+        function addLanguage(langName){
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `${langName}`;
+            document.querySelector('.language')
+            .appendChild(listItem);
+        }
+
+        // addLanguage('Python')
+        // addLanguage('Java')
+
+        // More Optimize way : As in this way js don't need to trave the whole tree.
+        // As we can directly create a node and add to ul
+
+        function addLanguageOption(langName){
+            const listName = document.createElement('li');
+            listName.appendChild(document.createTextNode(langName));
+            document.querySelector('.language')
+            .appendChild(listName);
+        }
+
+        addLanguageOption('Python')
+        addLanguageOption('Java')
+
+        // Edit value
+        const secondLang = document.querySelector("li:nth-child(2)");
+        const newListItem = document.createElement("li");
+        newListItem.textContent = "Mojo";
+
+        secondLang.replaceWith(newListItem);
+    </script>
+
+</html>
