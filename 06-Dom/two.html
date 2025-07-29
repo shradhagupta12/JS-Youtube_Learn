@@ -52,6 +52,19 @@
         newListItem.textContent = "Mojo";
 
         secondLang.replaceWith(newListItem);
+
+
+        // another way
+        const firstLang = document.querySelector('li:first-child');
+        firstLang.outerHTML = "<li>Go Lang</li>"
+
+
+        // remove element
+        const lastLang = document.querySelector('li:last-child');
+        lastLang.remove();
+
+
+
     </script>
 
 </html>
