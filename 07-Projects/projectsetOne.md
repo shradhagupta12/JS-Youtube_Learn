@@ -6,7 +6,7 @@
 
 ## Solution Code
 
-### Project 1
+### Project 1 - Background color change
 
 ``` javascript
 
@@ -21,7 +21,7 @@ btn.forEach((button) => {
 
 ```
 
-### Project 2
+### Project 2 - BMI Calculator
 
 ``` javascript
 
@@ -53,3 +53,16 @@ form.addEventListener('submit', function (e) {
 });
 
 ```
+
+### Project 3 - Digital Clock
+``` javascript
+
+const clock = document.getElementById('clock');
+
+setInterval(function () {
+  let date = new Date();
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
+
+```
+
