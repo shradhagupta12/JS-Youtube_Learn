@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asyn & Await</title>
+</head>
+
+<body>
+    <h1 class="title">Code with me</h1>
+    <button class="stop">Stop</button>
+</body>
+
+<script>
+    /*
+    setTimeout : Set timeout is a method that is 
+    run aftersome interval. It is also used to call 
+    API's. Runs only at once
+
+    */
+
+    // setTimeout(function () {
+    //     console.log("Youtube Link:https://www.youtube.com/watch?v=_TjtAyMkiTI&t=14355s");
+    // }, 2000);
+
+
+    // Giving refernce of the function to setTimeout
+    let sayShraddha = function(){
+        console.log("Shraddha");
+    }
+
+
+    let changeTitle = function(){
+        document.querySelector('.title').innerHTML =
+        "Code with Shraddha";
+    }
+
+    let timeOut = setTimeout(changeTitle,2000);
+
+    document.querySelector('.stop')
+    .addEventListener('click' , function(){
+        clearTimeout(timeOut);
+        console.log('Clicked Stopped');
+    })
+
+</script>
+
+</html>
