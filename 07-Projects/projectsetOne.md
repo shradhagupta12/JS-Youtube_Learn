@@ -180,3 +180,35 @@ function newGame() {
 }
 
 ```
+
+## Project6- Random color generater
+```javascript
+// generate random color.
+
+const randomColor = function () {
+  const hexValue = '0123456789ABCDEF';
+  let colorNew = '#';
+  for (let i = 0; i < 6; i++) {
+    colorNew += hexValue[Math.floor(Math.random() * 16)];
+  }
+  return colorNew;
+};
+
+let intervalId;
+const startChangingColor = function () {
+  function changeBodyColor() {
+    document.body.style.backgroundColor = randomColor();
+  }
+  intervalId = setInterval(changeBodyColor, 1000);
+};
+const stopChangingColor = function () {
+  clearInterval(intervalId);
+  intervalId = null;
+};
+
+document.querySelector('#start').addEventListener('click', startChangingColor);
+
+document.querySelector('#stop').addEventListener('click', stopChangingColor);
+
+
+```
