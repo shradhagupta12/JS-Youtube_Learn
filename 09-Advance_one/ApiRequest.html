@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request</title>
+    
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <h4>
+        Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+    </h4>
+
+    <script>
+        /*
+        We are going to study of sending API request using "XMLHttpRequest API"
+        In this we will apply XML to fetch data.
+
+        Step 1: For getting calling the API first step is to open the Request and get the API
+        
+        Step 2: Only getting and opening doesn't call the API we have to sent the same
+        for that we have to use xhr.send();
+
+        Step 3: For getting continuous monitoring the satges of the request we can use 
+        onreadystatechange to get the ongoing state of the request
+            
+        Note : Most of the time the response we get is  in string format now 
+        we have to convert this to Object format.
+        JSON.parse will covert the string to json format which is a object and 
+        throught this object we will be able to access the variable in the object
+
+        */
+
+        const apiURL = "https://api.github.com/users/shradhagupta12";
+        const xhr = new XMLHttpRequest()
+
+        xhr.open('GET' , apiURL);
+
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState);
+            if(xhr.readyState === 4){
+                const data = JSON.parse(this.responseText);
+                console.log(typeof data);
+                console.log();  
+            }
+            
+        }
+        xhr.send();
+    </script>
+</body>
+</html>
