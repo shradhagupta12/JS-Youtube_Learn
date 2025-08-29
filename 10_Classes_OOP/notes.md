@@ -25,3 +25,12 @@ Object Literal (It is collection of properties and method)
 - Inheritance
 - Polymorphism
 
+## 'this' context
+
+So 'this' keyword is used to pointing to the current context of javascript.
+And there are situation where a function is called inside a another function.
+So in this cases the 'this' will point to global execution 
+
+window = {this  = window}
+
+node = {}

@@ -57,10 +57,12 @@ Object.setPrototypeOf(TeacherSupport , Teacher);
 // Lets create the trueLenght method 
 Object.prototype.trueLength = function(){
     console.log(`${this}`);
-    console.log(`${this.myName}`);
+    // console.log(`${this.myName}`);
     console.log(`True length is: ${this.trim().length}`);
 }
 
 let anotherName = 'Shraddha     '
 
 anotherName.trueLength();
+"shraddha".trueLength();
+'iceTea'.trueLength();
