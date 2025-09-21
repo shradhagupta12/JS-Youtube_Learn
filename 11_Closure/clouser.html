@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+
+<body style="background-color: #313131 ;">
+
+    <button id="green">Green</button>
+    <button id="orange">Orange</button>
+
+    <script>
+        // Lexical Scoping
+        // function init() {
+        //     var name = "Mozilla";
+        //     function displayName() {
+        //         console.log(name);
+        //     }
+        //     displayName();
+        // }
+        // init();
+
+        // function outer(){
+        //     let userName = "Shraddha";
+        // }
+
+        // console.log(userName); //Uncaught ReferenceError: userName is not defined at clouser.html:26:21
+        
+
+// Function inside a function can share the variable but similary it is not accesable outside the function
+// But one function can't access another function.
+        // function outer(){
+        //     let userName = "Shraddha"
+        //     function inner(){
+        //         let customerId = "123344";
+        //         console.log("TOO INNER : ", userName);
+        //     }
+
+        //     function innerTwo(){
+        //         console.log("INNER TWO function : ", customerId );
+        //     }
+        //     inner();
+        //     innerTwo();
+        // }
+        // outer();
+        // console.log("TOO OUTER : " , userName);
+        // console.log("TOO OUTER : " , customerId);
+        
+// Closure 
+
+/*
+    So In closure the main role played by Memory. Basically it means that
+    as we known the function once run it is not avalable in excution context
+    an its vanish. But as we see the below example we have return the 
+    inner function that is displayName. And the display name is accessing the
+    outer function variable so closure will keep the variable value in the memory if only if 
+    its is required by any of the innerFunction.
+*/
+    // function makeFun(){
+    //     const name = "Mozilla";
+    //     function displayName(){
+    //         console.log(name);
+    //     }
+    //     return displayName;
+    // }
+
+    // const myFunc = makeFun();
+    // myFunc();
+    </script>
+
+<script>
+// Practical Exposure of Closure
+
+// Below code is not following the JS DRY principle 
+// document.getElementById("orange").onclick = function()
+// {
+//     document.body.style.backgroundColor = `orange`;
+// }
+
+// document.getElementById("green").onclick = function()
+// {
+//     document.body.style.backgroundColor = `green`;
+// }
+
+
+function clickHandler(color){
+    // document.getElementById("green").onclick = function()
+        return function(){
+            document.body.style.backgroundColor = `${color}`;
+        }
+}
+
+document.getElementById('orange').onclick = clickHandler("orange");
+document.getElementById('green').onclick = clickHandler("green");
+
+</script>
+
+</body>
+
+</html>
