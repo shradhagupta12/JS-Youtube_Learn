@@ -11,3 +11,7 @@ const User = {
     }
 }
 
+const team = Object.create(User)
+console.log(team.email);
+
+
